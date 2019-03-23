@@ -1,0 +1,25 @@
+.building {
+  position: relative;
+  width: 80px;
+  margin: 100px auto;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+  border-top: 1px solid #000;
+  .elevator{
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    background: rgba(244, 170, 66, 0.7);
+  }
+  .floor {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    border-bottom: 1px solid #000;
+    .floor-num {
+      position: absolute;
+      left: 5px;
+      bottom: 5px;
+    }
+  }
+}
