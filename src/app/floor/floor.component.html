@@ -1,0 +1,15 @@
+<div class="floor">
+  <div class="floor-num">
+    {{floorNum}}
+  </div>
+  <div class="buttons">
+    <div class="button up"
+      [class.active]="requestService.hasUpRequestAt(floorNum)"
+      (click)="addUpRequest()">
+    </div>
+    <div class="button down"
+      [class.active]="requestService.hasDownRequestAt(floorNum)"
+      (click)="addDownRequest()">
+    </div>
+  </div>
+</div>

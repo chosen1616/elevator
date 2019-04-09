@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TOTAL_FLOOR } from './constants';
 
 @Component({
   selector: 'app-root',
@@ -6,12 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  totalFloor = 5;
-  currFloor = 3;
   floors = [];
 
   ngOnInit() {
-    for (let i = this.totalFloor; i > 0; i--) {
+    for (let i = TOTAL_FLOOR; i > 0; i--) {
       this.floors.push(i);
     }
   }

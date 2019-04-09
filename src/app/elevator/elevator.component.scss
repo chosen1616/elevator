@@ -1,0 +1,15 @@
+@import "../../variables.scss";
+
+.elevator{
+  position: absolute;
+  width: 100%;
+  height: $floor-height;
+  background: $elevator-color;
+  transition: bottom 1s linear;
+  .door {
+    height: $floor-height - 1;
+    margin: 0 auto;
+    background: $elevator-door-color;
+    transition: width 0.5s linear;
+  }
+}

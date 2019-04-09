@@ -1,9 +1,8 @@
 <div class="container">
   <div class="building">
-    <div class="elevator" [style.bottom] = "(currFloor-1) * 80 + 'px'"></div>
-    <div *ngFor="let i of floors" class="floor">
-      <div class="floor-num">{{i}}</div>
-    </div>
+    <app-panel></app-panel>
+    <app-elevator></app-elevator>
+    <app-floor *ngFor="let floor of floors" class="floor" [floorNum]="floor"></app-floor>
   </div>
 </div>
 

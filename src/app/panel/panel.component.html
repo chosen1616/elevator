@@ -1,0 +1,8 @@
+<div class="panel">
+  <div *ngFor="let floor of requestService.floors"
+    class="button"
+    [class.active]="floor.requests[innerRequestType]"
+    (click) = "onClick(floor.num)">
+    {{floor.num}}
+  </div>
+</div>

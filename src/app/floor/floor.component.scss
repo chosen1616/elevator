@@ -1,0 +1,45 @@
+  @import "../../variables.scss";
+
+  $buttons-offset: 10px;
+  $button-bottom-height: 18px;
+  $button-default-color: #808080;
+
+  .floor {
+    position: relative;
+    width: 100%;
+    height: $floor-height;
+    border-bottom: 1px solid #000;
+    .floor-num {
+      padding: 5px;
+    }
+
+    .buttons {
+      position: absolute;
+      left: $floor-width + $buttons-offset;
+      top: 50%;
+      margin-top: -($button-bottom-height * 2 + 5px)/2;
+      .button {
+        width: 0px;
+        height: 0px;
+        margin-bottom: 5px;
+        cursor: pointer;
+
+        &.active {
+          border-bottom-color: $button-active-color;
+          border-top-color: $button-active-color;
+        }
+
+        &.up {
+          border-left: $button-bottom-height/2 solid transparent;
+          border-right: $button-bottom-height/2 solid transparent;
+          border-bottom: $button-bottom-height solid $button-default-color;
+        }
+
+        &.down {
+          border-left: $button-bottom-height/2 solid transparent;
+          border-right: $button-bottom-height/2 solid transparent;
+          border-top: $button-bottom-height solid $button-default-color;
+        }
+      }
+    }
+  }

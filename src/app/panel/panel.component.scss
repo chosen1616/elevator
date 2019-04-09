@@ -1,0 +1,27 @@
+@import "../../variables.scss";
+
+$button-size: 40px;
+$panel-offset-top: 20px;
+$panel-offset-left: 30px;
+
+.panel{
+  position: absolute;
+  top: $panel-offset-top;
+  right: $floor-width + $panel-offset-left;
+  display: flex;
+  flex-flow: column-reverse nowrap;
+  border: 1px solid #000;
+  .button{
+    width: $button-size;
+    height: $button-size;
+    border: 1px solid #000;
+    border-radius: 3px;
+    margin: 5px;
+    text-align: center;
+    line-height: $button-size;
+    cursor: pointer;
+    &.active {
+      background: $button-active-color;
+    }
+  }
+}
