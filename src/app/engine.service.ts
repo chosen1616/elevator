@@ -3,6 +3,8 @@ import { Observable, Subject } from 'rxjs';
 
 import { ElevatorStatus } from './constants';
 import { RequestService } from './request.service';
+import { shiftInitState } from '@angular/core/src/view';
+import { ThrowStmt } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -65,12 +67,25 @@ export class EngineService implements OnDestroy {
       return true;
     }
 
-    if (!this.requestService.hasRequestAbove(this.currFloor) || !this.requestService.hasRequestBelow(this.currFloor)) {
-      return true;
+    if (this.requestService.hasUpRequestAt(floor)) {
+      // up request
+      if (this.status === ElevatorStatus.UP) {
+        // elevator is going up
+        return true;
+      } else {
+        // elevator is going down
+        return !this.requestService.hasRequestBelow(floor);
+      }
+    } else {
+      // down request
+      if (this.status === ElevatorStatus.DOWN) {
+        // elevator is going down
+        return true;
+      } else {
+        // elevator is going up
+        return !this.requestService.hasRequestAbove(floor);
+      }
     }
-
-    return (this.status === ElevatorStatus.UP && this.requestService.hasUpRequestAt(floor)) ||
-           (this.status === ElevatorStatus.DOWN && this.requestService.hasDownRequestAt(floor));
   }
 
   private handleRequest(floor: number) {

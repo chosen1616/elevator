@@ -24,21 +24,22 @@
         margin-bottom: 5px;
         cursor: pointer;
 
-        &.active {
-          border-bottom-color: $button-active-color;
-          border-top-color: $button-active-color;
-        }
-
+        
         &.up {
           border-left: $button-bottom-height/2 solid transparent;
           border-right: $button-bottom-height/2 solid transparent;
           border-bottom: $button-bottom-height solid $button-default-color;
         }
-
+        
         &.down {
           border-left: $button-bottom-height/2 solid transparent;
           border-right: $button-bottom-height/2 solid transparent;
           border-top: $button-bottom-height solid $button-default-color;
+        }
+
+        &.up.active, &.down.active {
+          border-bottom-color: $button-active-color;
+          border-top-color: $button-active-color;
         }
       }
     }

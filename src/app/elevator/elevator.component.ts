@@ -21,7 +21,7 @@ export class ElevatorComponent implements OnInit, OnDestroy {
     this.requestLoadsubscription = this.engineService.getRequestLoad().subscribe(floor => {
       this.openAndCloseDoor();
     });
-    // this.engineService.start();
+    this.engineService.start();
   }
 
   ngOnDestroy() {
